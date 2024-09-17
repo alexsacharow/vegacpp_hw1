@@ -1,0 +1,10 @@
+name: build and run
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y cmake
+      - run: mkdir build; ls -Al; cmake -S .; cmake -B build; cmake --build build
+      - run: ./build/main 3 6
