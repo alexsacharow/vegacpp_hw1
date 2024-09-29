@@ -41,9 +41,9 @@ jobs:
           run: sudo apt-get install doxygen
         - name: Generate documentation
           run: doxygen Doxyfile
-        # - name: Deploy to GitHub Pages
-        #   if: ${{ github.event_name == 'push' && github.repository_owner == 'alee3x' }}
-        #   uses: peaceiris/actions-gh-pages@v3
-        #   with:
-        #     publish_dir: ./doc/
+        - name: Deploy to GitHub Pages
+          if: ${{ github.event_name == 'push' && github.repository_owner == 'alee3x' }}
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            publish_dir: ./doc/
  
