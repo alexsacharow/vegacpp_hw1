@@ -37,8 +37,8 @@ jobs:
       steps:
         - name: Checkout code
           uses: actions/checkout@v4
-        - name: Install Doxygen
-          run: sudo apt-get install doxygen
+        # - name: Install Doxygen
+          # run: sudo apt-get install doxygen
         - name: Doxygen Action
           uses: mattnotmitt/doxygen-action@1.9.8
           with:
@@ -51,6 +51,7 @@ jobs:
           # run: doxygen Doxyfile
 
         - name: Deploy to GitHub Pages
+          # run: touch .nojekyll
           uses: peaceiris/actions-gh-pages@v4
           with:
             deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}          
