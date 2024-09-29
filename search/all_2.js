@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['link_0',['Doxygen documentation link',['../md_README.html',1,'']]]
+  ['link_0',['Doxygen documentation link',['../index.html',1,'']]]
 ];
