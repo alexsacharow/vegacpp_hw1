@@ -28,5 +28,5 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(benchmark)
 
-add_executable(benchmark benchmark.cpp)
-target_link_libraries(benchmark benchmark::benchmark)
+add_executable(benchmark_add benchmark_add.cpp)
+target_link_libraries(benchmark_add benchmark::benchmark)
