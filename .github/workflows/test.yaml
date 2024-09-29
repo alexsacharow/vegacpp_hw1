@@ -37,10 +37,10 @@ jobs:
       steps:
         - name: Checkout code
           uses: actions/checkout@v4
-        # - name: Install Doxygen
-          # run: sudo apt-get install doxygen
+        - name: Install Doxygen
+          run: sudo apt-get install doxygen
         - name: Doxygen Action
-          uses: mattnotmitt/doxygen-action@v1.9.5
+          uses: mattnotmitt/doxygen-action@1.9.8
           with:
             additional-packages: font-fira-code
             # Path to Doxyfile
