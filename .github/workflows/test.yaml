@@ -31,20 +31,28 @@ jobs:
         with:
           name: binaries
       - run: chmod +x main && ./main 4 5
-
+        
   doxygen:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout code
-          uses: actions/checkout@v2
-        - name: Install Doxygen
-          run: sudo apt-get install doxygen
-        - name: Generate documentation
-          run: doxygen Doxyfile
+          uses: actions/checkout@v4
+        # - name: Install Doxygen
+          # run: sudo apt-get install doxygen
+        - name: Doxygen Action
+          uses: mattnotmitt/doxygen-action@v1.9.5
+          with:
+            additional-packages: font-fira-code
+            # Path to Doxyfile
+            doxyfile-path: "./Doxyfile" # default is ./Doxyfile
+            # Working directory
+            working-directory: "." # default is .
+   
+        # - name: Generate documentation
+          # run: doxygen Doxyfile
+
         - name: Deploy to GitHub Pages
-          if: ${{ github.event_name == 'push' && github.repository_owner == 'alee3x' }}
           uses: peaceiris/actions-gh-pages@v4
           with:
             deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}          
-            publish_dir: ./doc/
- 
+            publish_dir: ./html
