@@ -10,7 +10,7 @@ jobs:
       - name: Run benchmarks
         run: |
           cd build
-          ./benchmark_my_add
+          ./benchmark_add
       - uses: actions/upload-artifact@v4
         with:
           name: binaries
