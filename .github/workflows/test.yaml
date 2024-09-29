@@ -51,10 +51,8 @@ jobs:
   #           doxyfile-path: "./Doxyfile" # default is ./Doxyfile
   #           # Working directory
   #           working-directory: "." # default is .
-   
   #       # - name: Generate documentation
   #         # run: doxygen Doxyfile
-
   #       - name: Deploy to GitHub Pages
   #         # run: touch .nojekyll
   #         uses: peaceiris/actions-gh-pages@v4
